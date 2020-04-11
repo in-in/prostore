@@ -1,7 +1,31 @@
-import st from './style.scss';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { ErrorIndicator } from '../ErrorIndicator';
 
-export const errorBoundary = () => (
-	<div className={st['error-boundary']}>
-		errorBoundary
-	</div>
-);
+export class ErrorBoundary extends Component {
+	constructor() {
+		super();
+		this.state = {
+			'hasError': false,
+		};
+	}
+
+	componentDidCatch() {
+		this.setState({ 'hasError': true });
+	}
+
+	render() {
+		const { children } = this.props;
+		const { hasError } = this.state;
+
+		if (hasError) {
+			return <ErrorIndicator />;
+		}
+
+		return children;
+	}
+}
+
+ErrorBoundary.propTypes = {
+	'children': PropTypes.element.isRequired,
+};
