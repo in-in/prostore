@@ -2,7 +2,7 @@
 	"name": "prostore",
 	"scripts": {
 		"build": "next build",
-		"dev": "next",
+		"dev": "next dev",
 		"start": "next start"
 	},
 	"browserslist": [
