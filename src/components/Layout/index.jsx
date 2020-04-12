@@ -1,15 +1,22 @@
 import PropTypes from 'prop-types';
+import { withBookstoreService } from '@helpers/withBookstoreService';
 import Header from '../Header';
 
-const Layout = ({ children }) => (
-	<main>
-		<Header />
-		{children}
-	</main>
-);
-
-Layout.propTypes = {
-	'children': PropTypes.node.isRequired,
+const BaseLayout = ({ children, bookstoreService }) => {
+	console.log(bookstoreService.getBooks());
+	return (
+		<main>
+			<Header />
+			{children}
+		</main>
+	);
 };
 
-export default Layout;
+export const Layout = withBookstoreService()(BaseLayout);
+
+BaseLayout.propTypes = {
+	'children': PropTypes.node.isRequired,
+	'bookstoreService': PropTypes.shape({
+		'getBooks': PropTypes.func,
+	}).isRequired,
+};
