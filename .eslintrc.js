@@ -1,3 +1,5 @@
+const { join } = require('path');
+
 module.exports = {
 	'parser': 'babel-eslint',
 	'extends': ['airbnb', 'airbnb/hooks'],
@@ -10,6 +12,9 @@ module.exports = {
 			'alias': {
 				'map': [
 					['~', './src'],
+					['@store', './src/store'],
+					['@service', './src/services'],
+					['@helpers', join(__dirname, 'src', 'components', 'helpers')],
 				],
 				'extensions': ['.js', '.jsx'],
 			},

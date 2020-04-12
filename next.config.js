@@ -1,12 +1,17 @@
 /* eslint-disable no-param-reassign */
-const { resolve } = require('path');
+const { join } = require('path');
 const withSass = require('@zeit/next-sass');
 const sass = require('sass');
 
 const config = {
 	'poweredByHeader': false,
 	webpack(cfg) {
-		cfg.resolve.alias['~'] = resolve(__dirname, 'src');
+		cfg.resolve.alias = {
+			'~': join(__dirname, 'src'),
+			'@store': join(__dirname, 'src', 'store'),
+			'@service': join(__dirname, 'src', 'services'),
+			'@helpers': join(__dirname, 'src', 'components', 'helpers'),
+		};
 		return cfg;
 	},
 };
