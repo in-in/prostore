@@ -6,8 +6,8 @@ const Header = () => (
 		<Link href="/">
 			<a>Home</a>
 		</Link>
-		<Link href="/about">
-			<a>About</a>
+		<Link href="/cart">
+			<a>cart</a>
 		</Link>
 	</header>
 );
