@@ -4,6 +4,7 @@ import { BookstoreServiceProvider } from '@service/bookstore-context';
 import { BookstoreService } from '@service/bookstore';
 import { ErrorBoundary } from '~/components/ErrorBoundary';
 import { Layout } from '~/components/Layout';
+import { List } from '~/components/List';
 
 const bookstoreService = new BookstoreService();
 
@@ -14,6 +15,19 @@ export default function Index() {
 				<BookstoreServiceProvider value={bookstoreService}>
 					<Layout>
 						<p>Hello Next.js</p>
+						<List books={[{
+							'id': 1,
+							'title': 'Production-Ready Microservices',
+							'author': 'Susan J. Fowler',
+						},
+						{
+							'id': 2,
+							'title': 'Release It!',
+							'author': 'Michael T. Nygard',
+						}]}
+						>
+							sdfsdf
+						</List>
 					</Layout>
 				</BookstoreServiceProvider>
 			</ErrorBoundary>
