@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withBookstoreService } from '@helpers/withBookstoreService';
 import { booksLoaded } from '@store/actions';
+import { compose } from '@helpers/compose';
 import { ListItem } from '../ListItem';
 import st from './style.scss';
 
@@ -36,9 +37,10 @@ const mapDispatchToProps = {
 	'bookstoreLoaded': booksLoaded,
 };
 
-export const List = withBookstoreService()(
-	connect(mapStateToProps, mapDispatchToProps)(BaseList),
-);
+export const List = compose(
+	withBookstoreService(),
+	connect(mapStateToProps, mapDispatchToProps),
+)(BaseList);
 
 BaseList.propTypes = {
 	'books': PropTypes.arrayOf(PropTypes.object).isRequired,
