@@ -11,10 +11,10 @@ module.exports = {
 		'import/resolver': {
 			'alias': {
 				'map': [
-					['~', './src'],
-					['@store', './src/store'],
-					['@service', './src/services'],
-					['@helpers', join(__dirname, 'src', 'components', 'helpers')],
+					['~', join(__dirname, 'src')],
+					['@store', join(__dirname, 'src', 'store')],
+					['@service', join(__dirname, 'src', 'services')],
+					['@helpers', join(__dirname, 'src', 'helpers')],
 				],
 				'extensions': ['.js', '.jsx'],
 			},
