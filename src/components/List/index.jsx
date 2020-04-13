@@ -1,10 +1,11 @@
 /* eslint-disable react/prefer-stateless-function */
 import { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { ListItem } from '../ListItem';
 import st from './style.scss';
 
-export class List extends Component {
+class BaseList extends Component {
 	render() {
 		const { books } = this.props;
 		return (
@@ -19,6 +20,12 @@ export class List extends Component {
 	}
 }
 
-List.propTypes = {
+const mapStateToProps = ({ books }) => ({
+	'books': books,
+});
+
+export const List = connect(mapStateToProps)(BaseList);
+
+BaseList.propTypes = {
 	'books': PropTypes.arrayOf(PropTypes.object).isRequired,
 };

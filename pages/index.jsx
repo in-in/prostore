@@ -15,19 +15,7 @@ export default function Index() {
 				<BookstoreServiceProvider value={bookstoreService}>
 					<Layout>
 						<p>Hello Next.js</p>
-						<List books={[{
-							'id': 1,
-							'title': 'Production-Ready Microservices',
-							'author': 'Susan J. Fowler',
-						},
-						{
-							'id': 2,
-							'title': 'Release It!',
-							'author': 'Michael T. Nygard',
-						}]}
-						>
-							sdfsdf
-						</List>
+						<List />
 					</Layout>
 				</BookstoreServiceProvider>
 			</ErrorBoundary>
