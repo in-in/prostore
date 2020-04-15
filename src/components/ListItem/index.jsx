@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import st from './style.scss';
+import st from './style.module.scss';
 
 export const ListItem = ({ book }) => {
 	const { title, author } = book;

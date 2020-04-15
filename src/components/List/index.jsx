@@ -5,7 +5,7 @@ import { withBookstoreService } from '@helpers/withBookstoreService';
 import { booksLoaded } from '@store/actions';
 import { compose } from '@helpers/compose';
 import { ListItem } from '../ListItem';
-import st from './style.scss';
+import st from './style.module.scss';
 
 class BaseList extends Component {
 	componentDidMount() {

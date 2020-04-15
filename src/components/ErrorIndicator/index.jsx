@@ -1,4 +1,4 @@
-import st from './style.scss';
+import st from './style.module.scss';
 
 export const ErrorIndicator = () => (
 	<div className={st['error-indicator']}>
