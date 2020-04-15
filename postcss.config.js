@@ -4,5 +4,6 @@ module.exports = {
 			'stage': false,
 		},
 		'autoprefixer': {},
+		'postcss-normalize': {},
 	},
 };
