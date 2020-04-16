@@ -1,15 +1,12 @@
 import Link from 'next/link';
+import { Logo } from '../Logo';
 import st from './style.module.scss';
 
-const Header = () => (
+export const Header = () => (
 	<header className={st.header}>
-		<Link href="/">
-			<a>Home</a>
-		</Link>
+		<Logo />
 		<Link href="/cart">
 			<a>cart</a>
 		</Link>
 	</header>
 );
-
-export default Header;
