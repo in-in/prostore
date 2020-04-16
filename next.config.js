@@ -3,6 +3,11 @@ const { join } = require('path');
 
 const config = {
 	'poweredByHeader': false,
+	'experimental': {
+		'sassOptions': {
+			'includePaths': [join(__dirname, 'src', 'styles')],
+		},
+	},
 	webpack(cfg) {
 		cfg.resolve.alias = {
 			...cfg.resolve.alias,
