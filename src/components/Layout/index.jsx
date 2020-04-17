@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import st from './style.module.scss';
 
 export const Layout = ({ children }) => (
-	<main>
+	<main className={st.layout}>
 		{children}
 	</main>
 );

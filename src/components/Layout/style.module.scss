@@ -1,0 +1,5 @@
+@use 'config' as *;
+
+.layout {
+	@include container();
+}

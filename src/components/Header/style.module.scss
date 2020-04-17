@@ -1,3 +1,7 @@
+@use 'config' as *;
+
 .header {
-	background-color: bisque
+	@include container();
+	display: flex;
+	justify-content: space-between;
 }

@@ -109,3 +109,8 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
+
+@mixin container() {
+	padding-left: 5vw;
+	padding-right: 5vw;
+}
