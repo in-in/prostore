@@ -5,7 +5,7 @@ export const ListItem = ({ book }) => {
 	const { title, author } = book;
 
 	return (
-		<li className={st['list-item']}>
+		<li className={st.listItem}>
 			<span>{title}</span>
 			<span>{author}</span>
 		</li>
