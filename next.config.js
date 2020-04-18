@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 const { join } = require('path');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 const config = {
 	'poweredByHeader': false,
@@ -16,6 +17,9 @@ const config = {
 			'@service': join(__dirname, 'src', 'services'),
 			'@helpers': join(__dirname, 'src', 'helpers'),
 		};
+		cfg.plugins.push(new StylelintPlugin({
+			'fix': true,
+		}));
 		return cfg;
 	},
 };

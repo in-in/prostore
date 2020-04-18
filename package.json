@@ -33,6 +33,12 @@
 		"postcss-normalize": "9.0.0",
 		"postcss-preset-env": "6.7.0",
 		"prop-types": "15.7.2",
-		"sass": "1.26.3"
+		"sass": "1.26.3",
+		"stylelint": "13.3.2",
+		"stylelint-a11y": "1.2.3",
+		"stylelint-order": "4.0.0",
+		"stylelint-scss": "3.17.0",
+		"stylelint-use-nesting": "2.0.0",
+		"stylelint-webpack-plugin": "1.2.3"
 	}
 }
