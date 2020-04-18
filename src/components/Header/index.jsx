@@ -1,12 +1,10 @@
-import Link from 'next/link';
 import { Logo } from '../Logo';
+import { CartIndicator } from '../CartIndicator';
 import st from './style.module.scss';
 
 export const Header = () => (
 	<header className={st.header}>
 		<Logo />
-		<Link href="/cart">
-			<a>cart</a>
-		</Link>
+		<CartIndicator numItems="5" total="230" />
 	</header>
 );
