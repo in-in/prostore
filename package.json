@@ -12,7 +12,7 @@
 		"not and_uc >= 12"
 	],
 	"dependencies": {
-		"next": "9.3.4",
+		"next": "9.3.5",
 		"react": "16.13.1",
 		"react-dom": "16.13.1",
 		"react-redux": "7.2.0",
@@ -22,6 +22,7 @@
 		"@zeit/next-sass": "1.0.1",
 		"autoprefixer": "9.7.6",
 		"babel-eslint": "10.1.0",
+		"babel-plugin-inline-react-svg": "1.1.1",
 		"eslint": "6.8.0",
 		"eslint-config-airbnb": "18.1.0",
 		"eslint-import-resolver-alias": "1.1.2",
