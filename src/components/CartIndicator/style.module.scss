@@ -1,9 +1,8 @@
-.cartIndicator {
-	background-color: #008b8b;
+@use 'config' as *;
 
+.cartIndicator {
 	&_icon {
 		width: 2rem;
-		fill: #8a2be2;
-		stroke: #ff7f50;
+		fill: $nightmare;
 	}
 }

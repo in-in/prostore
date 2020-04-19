@@ -13,14 +13,16 @@
 *:focus {
 	outline: none !important;
 	box-shadow:
-		0 0 0 rem(2) #f08080,
+		0 0 0 rem(2) $king_tide,
 		0 0 0 rem(6) #ffb6c1 !important;
 }
 
 BODY {
+	background-color: $blue_emulsion;
+	color: $nightmare;
 	font-family: $font_secondary;
 }
 
 ::selection {
-	background-color: #ff69b4;
+	background-color: $rouge_red;
 }
