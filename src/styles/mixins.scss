@@ -30,27 +30,66 @@
 }
 /* stylelint-enable */
 
-@mixin hover_transition() {
-	transition-property: background-color, color, fill;
-	transition-duration: var(--transition_duration);
-	transition-timing-function: var(--transition_easeing);
+@mixin strike_out() {
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		right: 100%;
+		left: 0;
+		border-bottom: 0.07em solid $rouge_red;
+		transform: translateY(-50%);
+
+		@media (prefers-reduced-motion: reduce) {
+			right: 0;
+		}
+	}
 }
 
 @mixin hover($selector: null, $combinator: ' ') {
 	@if $selector {
 		#{$selector} {
-			@include hover_transition();
+			@include strike_out();
 		}
 	}
 
 	@else {
-		@include hover_transition();
+		@include strike_out();
 	}
 
 	@media (hover: hover) {
 		&:hover#{$combinator}#{$selector} {
 			@content;
+
+			&::after {
+				animation-name: line;
+				animation-duration: 1.5s;
+				animation-timing-function: ease-in-out;
+				animation-iteration-count: infinite;
+			}
 		}
+	}
+}
+
+@keyframes line {
+	0%,
+	10% {
+		right: 100%;
+		left: 0;
+	}
+
+	40%,
+	60% {
+		right: 0;
+		left: 0;
+	}
+
+	90%,
+	100% {
+		right: 0;
+		left: 100%;
 	}
 }
 

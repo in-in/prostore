@@ -1,4 +1,11 @@
+@use 'config' as *;
+
 .logo {
 	text-transform: uppercase;
+	letter-spacing: -0.1em;
+	font-size: 10vw;
 	font-weight: 700;
+	line-height: 1;
+
+	@include hover();
 }
