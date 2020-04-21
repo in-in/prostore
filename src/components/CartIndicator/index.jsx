@@ -6,7 +6,11 @@ import st from './style.module.scss';
 export const CartIndicator = ({ numItems, total }) => (
 	<Link href="/cart">
 		<a className={st.cartIndicator}>
-			<Cart className={st.cartIndicator_icon} />{numItems} items (${total})
+			<div className={st.cartIndicator_text}>
+				<span>{numItems} items </span>
+				<span>(${total})</span>
+			</div>
+			<Cart className={st.cartIndicator_icon} />
 		</a>
 	</Link>
 );
