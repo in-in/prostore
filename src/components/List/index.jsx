@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { withBookstoreService } from '@helpers/withBookstoreService';
 import { booksLoaded } from '@store/actions';
 import { compose } from '@helpers/compose';
-import { ListItem } from '../ListItem';
+import { Card } from '../Card';
 import st from './style.module.scss';
 
 class BaseList extends Component {
@@ -21,7 +21,9 @@ class BaseList extends Component {
 			<ul className={st.list}>
 				{
 					books.map((book) => (
-						<ListItem key={book.id} book={book} />
+						<li key={book.id} className={st.list_item}>
+							<Card book={book} />
+						</li>
 					))
 				}
 			</ul>

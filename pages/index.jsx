@@ -16,7 +16,6 @@ export default function Index() {
 				<BookstoreServiceProvider value={bookstoreService}>
 					<Header />
 					<Layout>
-						<p>Hello Next.js</p>
 						<List />
 					</Layout>
 				</BookstoreServiceProvider>
