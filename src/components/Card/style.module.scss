@@ -38,19 +38,28 @@
 	}
 
 	&_author {
-		flex: 1;
-		min-width: 0;
-		overflow: hidden;
+		flex-grow: 1;
+		flex-shrink: 1;
+		flex-basis: 0;
 		color: $king_tide;
-		text-overflow: ellipsis;
 		text-transform: lowercase;
-		white-space: nowrap;
+
+		@include truncate_text();
 	}
 
 	&_price {
+		max-width: 5ch;
 		padding-left: 0.2em;
 		white-space: nowrap;
 		font-size: 2em;
+
+		@include truncate_text();
+
+		@media (hover: hover) {
+			&:hover {
+				max-width: none;
+			}
+		}
 	}
 
 	&_title {

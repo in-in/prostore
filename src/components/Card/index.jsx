@@ -14,8 +14,8 @@ export const Card = ({ book }) => {
 				</figure>
 				<div className={st.card_body}>
 					<div className={st.card_bodyHeader}>
-						<p className={st.card_author}>{author}</p>
-						<p className={st.card_price}>${price}</p>
+						<span className={st.card_author}>{author}</span>
+						<span className={st.card_price}>${price}</span>
 					</div>
 					<h4 className={st.card_title}>{title}</h4>
 					<button type="button" className={st.card_button}>Add To Cart</button>

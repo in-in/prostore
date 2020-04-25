@@ -18,7 +18,7 @@ export class BookstoreService {
 			'id': 3,
 			'title': 'Production-Ready Microservices',
 			'author': 'Lorem ipsum sitamet consectetur, adipisicing elit. Molestiae nemo, voluptatem ',
-			'price': 32,
+			'price': 32583,
 			'coverImage': 'http://satyr.io/1200x1:1/0?type=png&text=fallback&texture=cross',
 		},
 		{
