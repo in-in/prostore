@@ -1,0 +1,34 @@
+@use 'config' as *;
+
+.CartTable {
+	width: 100%;
+	// background-color: #22c0cb;
+	outline: 1px solid #ffa100;
+	border-collapse: collapse;
+
+	&_body {
+		TR:nth-of-type(odd) {
+			background: #c2e8f0;
+		}
+
+		TR:nth-of-type(even) {
+			background: #98d9e6;
+		}
+	}
+
+	&_caption {
+		text-align: left;
+		text-transform: uppercase;
+	}
+
+	&_total {
+		&Text {
+			padding-right: 0.5em;
+			text-align: right;
+		}
+
+		&Amount {
+			font-size: 1.5em;
+		}
+	}
+}
