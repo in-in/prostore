@@ -1,0 +1,15 @@
+@use 'config' as *;
+
+.tableButton {
+	max-width: 1.5em;
+	margin: 0.2em;
+	padding: 0.1em;
+	border: 1px solid;
+	color: $king_tide;
+	cursor: pointer;
+
+	SVG {
+		fill: currentColor;
+		stroke: currentColor;
+	}
+}

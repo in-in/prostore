@@ -1,6 +1,10 @@
 // import PropTypes from 'prop-types';
 // import Link from 'next/link';
 // import Cart from '../../assets/icons/cart.svg';
+import { TableButton } from '../TableButton';
+import Close from '../../assets/icons/close.svg';
+import CartMinus from '../../assets/icons/cart_minus.svg';
+import CartPlus from '../../assets/icons/cart_plus.svg';
 import st from './style.module.scss';
 
 export const Table = () =>
@@ -26,10 +30,10 @@ export const Table = () =>
 					<td>Production-Ready Microservices</td>
 					<td>2</td>
 					<td>$40</td>
-					<td>
-						<button type="button">1</button>
-						<button type="button">2</button>
-						<button type="button">3</button>
+					<td className={st.table_buttonGroup}>
+						<TableButton icon={<CartMinus />} />
+						<TableButton icon={<CartPlus />} />
+						<TableButton icon={<Close />} />
 					</td>
 				</tr>
 				<tr>

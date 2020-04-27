@@ -31,4 +31,11 @@
 			font-size: 1.5em;
 		}
 	}
+
+	&_buttonGroup {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
 }
