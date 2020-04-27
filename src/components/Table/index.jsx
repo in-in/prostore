@@ -1,16 +1,16 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // import Link from 'next/link';
 // import Cart from '../../assets/icons/cart.svg';
 import st from './style.module.scss';
 
-export const CartTable = () =>
+export const Table = () =>
 // const {
 // 	// author, price, title,
 // } = book;
 
 	(
-		<table className={st.CartTable}>
-			<caption className={st.CartTable_caption}>Your Order</caption>
+		<table className={st.table}>
+			<caption className={st.table_caption}>Your Order</caption>
 			<thead>
 				<tr>
 					<th>#</th>
@@ -20,7 +20,7 @@ export const CartTable = () =>
 					<th>Action</th>
 				</tr>
 			</thead>
-			<tbody className={st.CartTable_body}>
+			<tbody className={st.table_body}>
 				<tr>
 					<td>1</td>
 					<td>Production-Ready Microservices</td>
@@ -46,17 +46,17 @@ export const CartTable = () =>
 			</tbody>
 			<tfoot>
 				<tr>
-					<th colSpan="4" className={st.CartTable_totalText}>Total:</th>
-					<td className={st.CartTable_totalAmount}>$222</td>
+					<th colSpan="4" className={st.table_totalText}>Total:</th>
+					<td className={st.table_totalAmount}>$222</td>
 				</tr>
 			</tfoot>
 		</table>
 	);
 
-CartTable.propTypes = {
-	'book': PropTypes.shape({
-		'author': PropTypes.string,
-		'price': PropTypes.number,
-		'title': PropTypes.string,
-	}).isRequired,
-};
+// Table.propTypes = {
+// 	'book': PropTypes.shape({
+// 		'author': PropTypes.string,
+// 		'price': PropTypes.number,
+// 		'title': PropTypes.string,
+// 	}).isRequired,
+// };

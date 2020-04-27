@@ -6,7 +6,7 @@ import { ErrorBoundary } from '~/components/ErrorBoundary';
 import { Layout } from '~/components/Layout';
 import { Header } from '~/components/Header';
 import { List } from '~/components/List';
-import { CartTable } from '~/components/CartTable';
+import { Table } from '~/components/Table';
 
 const bookstoreService = new BookstoreService();
 
@@ -18,7 +18,7 @@ export default function Index() {
 					<Header />
 					<Layout>
 						<List />
-						<CartTable />
+						<Table />
 					</Layout>
 				</BookstoreServiceProvider>
 			</ErrorBoundary>
