@@ -17,19 +17,19 @@ export const Table = () =>
 			<caption className={st.table_caption}>Your Order</caption>
 			<thead>
 				<tr>
-					<th>#</th>
-					<th>Item</th>
-					<th>Count</th>
-					<th>Price</th>
-					<th>Action</th>
+					<th className={st.table_head}>#</th>
+					<th className={st.table_head}>Item</th>
+					<th className={st.table_head}>Count</th>
+					<th className={st.table_head}>Price</th>
+					<th className={st.table_head}>Action</th>
 				</tr>
 			</thead>
 			<tbody className={st.table_body}>
 				<tr>
-					<td>1</td>
-					<td>Production-Ready Microservices</td>
-					<td>2</td>
-					<td>$40</td>
+					<td className={st.table_item}>1</td>
+					<td className={st.table_itemName}>Production-Ready Microservices</td>
+					<td className={st.table_item}>2</td>
+					<td className={st.table_item}>$40</td>
 					<td className={st.table_buttonGroup}>
 						<TableButton icon={<CartMinus />} />
 						<TableButton icon={<CartPlus />} />
@@ -37,20 +37,33 @@ export const Table = () =>
 					</td>
 				</tr>
 				<tr>
-					<td>1</td>
-					<td>Production-Ready Microservices</td>
-					<td>2</td>
-					<td>$40</td>
-					<td>
-						<button type="button">1</button>
-						<button type="button">2</button>
-						<button type="button">3</button>
+					<td className={st.table_item}>1</td>
+					<td className={st.table_itemName}>Ready</td>
+					<td className={st.table_item}>2</td>
+					<td className={st.table_item}>$40</td>
+					<td className={st.table_buttonGroup}>
+						<TableButton icon={<CartMinus />} />
+						<TableButton icon={<CartPlus />} />
+						<TableButton icon={<Close />} />
+					</td>
+				</tr>
+				<tr>
+					<td className={st.table_item}>1</td>
+					<td className={st.table_itemName}>
+						Production-Ready Microservices Production Ready Microservices
+					</td>
+					<td className={st.table_item}>2</td>
+					<td className={st.table_item}>$40</td>
+					<td className={st.table_buttonGroup}>
+						<TableButton icon={<CartMinus />} />
+						<TableButton icon={<CartPlus />} />
+						<TableButton icon={<Close />} />
 					</td>
 				</tr>
 			</tbody>
 			<tfoot>
 				<tr>
-					<th colSpan="4" className={st.table_totalText}>Total:</th>
+					<td colSpan="4" className={st.table_totalText}>Total:</td>
 					<td className={st.table_totalAmount}>$222</td>
 				</tr>
 			</tfoot>

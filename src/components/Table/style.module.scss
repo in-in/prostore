@@ -2,40 +2,64 @@
 
 .table {
 	width: 100%;
-	// background-color: #22c0cb;
-	outline: 1px solid #ffa100;
+	// outline: 1px solid #ffa100;
 	border-collapse: collapse;
 
 	&_body {
 		TR:nth-of-type(odd) {
-			background: #c2e8f0;
+			// background: #c2e8f0;
 		}
 
 		TR:nth-of-type(even) {
-			background: #98d9e6;
+			// background: #98d9e6;
 		}
 	}
 
 	&_caption {
 		text-align: left;
 		text-transform: uppercase;
+		font-weight: 700;
+		line-height: 2;
+	}
+
+	&_head {
+		padding-right: 0.2em;
+		padding-left: 0.2em;
+		font-size: 0.8em;
+	}
+
+	&_item {
+		$item: compose(&);
+
+		padding: 0.2em;
+		text-align: center;
+
+		&Name {
+			composes: $item;
+			width: 60%;
+			text-align: left;
+		}
 	}
 
 	&_total {
+		$total: compose(&);
+
+		padding: 0.2em;
+
 		&Text {
-			padding-right: 0.5em;
+			composes: $total;
 			text-align: right;
+			font-weight: 700;
 		}
 
 		&Amount {
+			composes: $total;
+			text-align: left;
 			font-size: 1.5em;
 		}
 	}
 
 	&_buttonGroup {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
+		text-align: center;
 	}
 }
