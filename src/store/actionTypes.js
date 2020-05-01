@@ -1,1 +1,2 @@
 export const BOOKS_LOADED = 'BOOKS_LOADED';
+export const BOOKS_REQUESTED = 'BOOKS_REQUESTED';

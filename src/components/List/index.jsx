@@ -2,14 +2,15 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withBookstoreService } from '@helpers/withBookstoreService';
-import { booksLoaded } from '@store/actions';
+import { booksLoaded, booksRequested } from '@store/actions';
 import { compose } from '@helpers/compose';
 import { Card } from '../Card';
 import st from './style.module.scss';
 
 class BaseList extends Component {
 	componentDidMount() {
-		const { bookstoreLoaded, bookstoreService } = this.props;
+		const { bookstoreLoaded, bookstoreService, bookstoreRequested } = this.props;
+		bookstoreRequested();
 		bookstoreService.getBooks().then((data) => bookstoreLoaded(data));
 	}
 
@@ -40,6 +41,7 @@ const mapStateToProps = ({ books, loading }) => ({
 
 const mapDispatchToProps = {
 	'bookstoreLoaded': booksLoaded,
+	'bookstoreRequested': booksRequested,
 };
 
 export const List = compose(
@@ -50,6 +52,7 @@ export const List = compose(
 BaseList.propTypes = {
 	'books': PropTypes.arrayOf(PropTypes.object).isRequired,
 	'bookstoreLoaded': PropTypes.func.isRequired,
+	'bookstoreRequested': PropTypes.func.isRequired,
 	'bookstoreService': PropTypes.shape({
 		'getBooks': PropTypes.func,
 	}).isRequired,
