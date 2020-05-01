@@ -10,13 +10,15 @@ import st from './style.module.scss';
 class BaseList extends Component {
 	componentDidMount() {
 		const { bookstoreLoaded, bookstoreService } = this.props;
-		const data = bookstoreService.getBooks();
-
-		bookstoreLoaded(data);
+		bookstoreService.getBooks().then((data) => bookstoreLoaded(data));
 	}
 
 	render() {
-		const { books } = this.props;
+		const { books, loading } = this.props;
+
+		if (loading) {
+			return <div>loading...</div>;
+		}
 		return (
 			<ul className={st.list}>
 				{
@@ -31,8 +33,9 @@ class BaseList extends Component {
 	}
 }
 
-const mapStateToProps = ({ books }) => ({
+const mapStateToProps = ({ books, loading }) => ({
 	'books': books,
+	'loading': loading,
 });
 
 const mapDispatchToProps = {
@@ -50,4 +53,5 @@ BaseList.propTypes = {
 	'bookstoreService': PropTypes.shape({
 		'getBooks': PropTypes.func,
 	}).isRequired,
+	'loading': PropTypes.bool.isRequired,
 };

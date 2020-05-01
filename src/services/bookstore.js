@@ -45,6 +45,10 @@ export class BookstoreService {
 	]
 
 	getBooks() {
-		return this.data;
+		return new Promise((resolve) => {
+			setTimeout(() => {
+				resolve(this.data);
+			}, 1800);
+		});
 	}
 }
