@@ -2,6 +2,7 @@ import {
 	FETCH_BOOKS_SUCCESS,
 	FETCH_BOOKS_REQUEST,
 	FETCH_BOOKS_FAILURE,
+	BOOK_ADDED_TO_CART,
 } from './actionTypes';
 
 export const booksLoaded = (newBooks) => ({
@@ -16,6 +17,11 @@ export const booksRequested = () => ({
 export const booksError = (error) => ({
 	'type': FETCH_BOOKS_FAILURE,
 	'payload': error,
+});
+
+export const bookAddedToCart = (bookId) => ({
+	'type': BOOK_ADDED_TO_CART,
+	'payload': bookId,
 });
 
 export const fetchBooks = (dispatch, bookstoreService) => () => {

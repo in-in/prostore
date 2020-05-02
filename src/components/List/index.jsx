@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withBookstoreService } from '@helpers/withBookstoreService';
-import { fetchBooks } from '@store/actions';
+import { fetchBooks, bookAddedToCart } from '@store/actions';
 import { compose } from '@helpers/compose';
 import { Card } from '../Card';
 import { Snipper } from '../Snipper';
@@ -16,7 +16,9 @@ class BaseList extends Component {
 	}
 
 	render() {
-		const { books, loading, error } = this.props;
+		const {
+			books, loading, error, onAddedToCart,
+		} = this.props;
 
 		if (loading) {
 			return <Snipper />;
@@ -29,11 +31,14 @@ class BaseList extends Component {
 		return (
 			<ul className={st.list}>
 				{
-					books.map((book) => (
-						<li key={book.id} className={st.list_item}>
-							<Card book={book} />
-						</li>
-					))
+					books.map((book) => {
+						const { id } = book;
+						return (
+							<li key={id} className={st.list_item}>
+								<Card book={book} onAddedToCart={() => onAddedToCart(id)} />
+							</li>
+						);
+					})
 				}
 			</ul>
 		);
@@ -50,6 +55,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 	const { bookstoreService } = ownProps;
 	return {
 		'fetchList': fetchBooks(dispatch, bookstoreService),
+		'onAddedToCart': (id) => dispatch(bookAddedToCart(id)),
 	};
 };
 
@@ -69,4 +75,5 @@ BaseList.propTypes = {
 		PropTypes.bool,
 		PropTypes.object,
 	]).isRequired,
+	'onAddedToCart': PropTypes.func.isRequired,
 };

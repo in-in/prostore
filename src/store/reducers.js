@@ -2,26 +2,14 @@ import {
 	FETCH_BOOKS_SUCCESS,
 	FETCH_BOOKS_REQUEST,
 	FETCH_BOOKS_FAILURE,
+	BOOK_ADDED_TO_CART,
 } from './actionTypes';
 
 const initialState = {
 	'books': [],
 	'loading': true,
 	'error': false,
-	'cartItems': [
-		{
-			'id': 1,
-			'name': 'book 1',
-			'count': 3,
-			'total': 150,
-		},
-		{
-			'id': 2,
-			'name': 'book 2',
-			'count': 4,
-			'total': 220,
-		},
-	],
+	'cartItems': [],
 	'orderTotal': 220,
 };
 
@@ -48,6 +36,23 @@ export const reducer = (state = initialState, action) => {
 				'loading': false,
 				'error': action.payload,
 			};
+		case BOOK_ADDED_TO_CART: {
+			const bookId = action.payload;
+			const book = state.books.find((i) => i.id === bookId);
+			const newItem = {
+				'id': book.id,
+				'name': book.title,
+				'count': 1,
+				'total': book.price,
+			};
+			return {
+				...state,
+				'cartItems': [
+					...state.cartItems,
+					newItem,
+				],
+			};
+		}
 		default:
 			return state;
 	}

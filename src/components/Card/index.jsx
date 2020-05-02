@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import st from './style.module.scss';
 
-export const Card = ({ book }) => {
+export const Card = ({ book, onAddedToCart }) => {
 	const {
 		author, coverImage, price, title,
 	} = book;
@@ -18,7 +18,12 @@ export const Card = ({ book }) => {
 						<span className={st.card_price}>${price}</span>
 					</div>
 					<h4 className={st.card_title}>{title}</h4>
-					<button type="button" className={st.card_button}>Add To Cart</button>
+					<button
+						type="button"
+						className={st.card_button}
+						onClick={onAddedToCart}
+					>Add To Cart
+					</button>
 				</div>
 			</a>
 		</article>
@@ -32,4 +37,5 @@ Card.propTypes = {
 		'price': PropTypes.number,
 		'title': PropTypes.string,
 	}).isRequired,
+	'onAddedToCart': PropTypes.func.isRequired,
 };
