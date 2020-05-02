@@ -13,3 +13,10 @@ export const booksError = (error) => ({
 	'type': BOOKS_ERROR,
 	'payload': error,
 });
+
+export const fetchBooks = (dispatch, bookstoreService) => () => {
+	dispatch(booksRequested());
+	bookstoreService.getBooks()
+		.then((data) => dispatch(booksLoaded(data)))
+		.catch((err) => dispatch(booksError(err)));
+};
