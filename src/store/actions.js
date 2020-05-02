@@ -1,16 +1,20 @@
-import { BOOKS_LOADED, BOOKS_REQUESTED, BOOKS_ERROR } from './actionTypes';
+import {
+	FETCH_BOOKS_SUCCESS,
+	FETCH_BOOKS_REQUEST,
+	FETCH_BOOKS_FAILURE,
+} from './actionTypes';
 
 export const booksLoaded = (newBooks) => ({
-	'type': BOOKS_LOADED,
+	'type': FETCH_BOOKS_SUCCESS,
 	'payload': newBooks,
 });
 
 export const booksRequested = () => ({
-	'type': BOOKS_REQUESTED,
+	'type': FETCH_BOOKS_REQUEST,
 });
 
 export const booksError = (error) => ({
-	'type': BOOKS_ERROR,
+	'type': FETCH_BOOKS_FAILURE,
 	'payload': error,
 });
 

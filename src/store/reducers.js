@@ -1,4 +1,8 @@
-import { BOOKS_LOADED, BOOKS_REQUESTED, BOOKS_ERROR } from './actionTypes';
+import {
+	FETCH_BOOKS_SUCCESS,
+	FETCH_BOOKS_REQUEST,
+	FETCH_BOOKS_FAILURE,
+} from './actionTypes';
 
 const initialState = {
 	'books': [],
@@ -8,19 +12,19 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
 	switch (action.type) {
-		case BOOKS_REQUESTED:
+		case FETCH_BOOKS_REQUEST:
 			return {
 				'books': [],
 				'loading': true,
 				'error': false,
 			};
-		case BOOKS_LOADED:
+		case FETCH_BOOKS_SUCCESS:
 			return {
 				'books': action.payload,
 				'loading': false,
 				'error': false,
 			};
-		case BOOKS_ERROR:
+		case FETCH_BOOKS_FAILURE:
 			return {
 				'books': [],
 				'loading': false,
