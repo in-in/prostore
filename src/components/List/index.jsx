@@ -11,16 +11,8 @@ import st from './style.module.scss';
 
 class BaseList extends Component {
 	componentDidMount() {
-		const {
-			bookstoreLoaded,
-			bookstoreService,
-			bookstoreRequested,
-			bookstoreError,
-		} = this.props;
-		bookstoreRequested();
-		bookstoreService.getBooks()
-			.then((data) => bookstoreLoaded(data))
-			.catch((err) => bookstoreError(err));
+		const { fetchBooks } = this.props;
+		fetchBooks();
 	}
 
 	render() {
@@ -54,10 +46,16 @@ const mapStateToProps = ({ books, loading, error }) => ({
 	'error': error,
 });
 
-const mapDispatchToProps = {
-	'bookstoreLoaded': booksLoaded,
-	'bookstoreRequested': booksRequested,
-	'bookstoreError': booksError,
+const mapDispatchToProps = (dispatch, ownProps) => {
+	const { bookstoreService } = ownProps;
+	return {
+		'fetchBooks': () => {
+			dispatch(booksRequested());
+			bookstoreService.getBooks()
+				.then((data) => dispatch(booksLoaded(data)))
+				.catch((err) => dispatch(booksError(err)));
+		},
+	};
 };
 
 export const List = compose(
@@ -67,9 +65,7 @@ export const List = compose(
 
 BaseList.propTypes = {
 	'books': PropTypes.arrayOf(PropTypes.object).isRequired,
-	'bookstoreLoaded': PropTypes.func.isRequired,
-	'bookstoreRequested': PropTypes.func.isRequired,
-	'bookstoreError': PropTypes.func.isRequired,
+	'fetchBooks': PropTypes.func.isRequired,
 	'bookstoreService': PropTypes.shape({
 		'getBooks': PropTypes.func,
 	}).isRequired,
