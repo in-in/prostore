@@ -1,5 +1,10 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import {
+	allBooksRemoveFromCart,
+	bookAddedToCart,
+	bookRemoveFromCart,
+} from '@store/actions';
 import { TableButton } from '../TableButton';
 import Close from '../../assets/icons/close.svg';
 import CartMinus from '../../assets/icons/cart_minus.svg';
@@ -7,7 +12,7 @@ import CartPlus from '../../assets/icons/cart_plus.svg';
 import st from './style.module.scss';
 
 const BaseTable = ({
-	items, total, onIncrease, onDecrease, onDelete,
+	items, sum, onIncrease, onDecrease, onDelete,
 }) =>
 	(
 		<table className={st.table}>
@@ -55,7 +60,7 @@ const BaseTable = ({
 			<tfoot>
 				<tr>
 					<td colSpan="4" className={st.table_totalText}>Total:</td>
-					<td className={st.table_totalAmount}>${total}</td>
+					<td className={st.table_totalAmount}>${sum}</td>
 				</tr>
 			</tfoot>
 		</table>
@@ -63,27 +68,21 @@ const BaseTable = ({
 
 const mapStateToProps = ({ cartItems, orderTotal }) => ({
 	'items': cartItems,
-	'total': orderTotal,
+	'sum': orderTotal,
 });
 
-const mapDispatchToProps = () => ({
-	onIncrease: (id) => {
-		console.log(`onIncrease ${id}`);
-	},
-	onDecrease: (id) => {
-		console.log(`onDecrease ${id}`);
-	},
-	onDelete: (id) => {
-		console.log(`onDelete ${id}`);
-	},
-});
+const mapDispatchToProps = {
+	'onDecrease': bookRemoveFromCart,
+	'onDelete': allBooksRemoveFromCart,
+	'onIncrease': bookAddedToCart,
+};
 
 export const Table = connect(mapStateToProps, mapDispatchToProps)(BaseTable);
 
 BaseTable.propTypes = {
 	'items': PropTypes.arrayOf(PropTypes.object).isRequired,
-	'total': PropTypes.number.isRequired,
-	'onIncrease': PropTypes.func.isRequired,
 	'onDecrease': PropTypes.func.isRequired,
 	'onDelete': PropTypes.func.isRequired,
+	'onIncrease': PropTypes.func.isRequired,
+	'sum': PropTypes.number.isRequired,
 };

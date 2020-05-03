@@ -1,8 +1,10 @@
 import {
-	FETCH_BOOKS_SUCCESS,
-	FETCH_BOOKS_REQUEST,
-	FETCH_BOOKS_FAILURE,
+	ALL_BOOKS_REMOVE_FROM_CART,
 	BOOK_ADDED_TO_CART,
+	BOOK_REMOVE_FROM_CART,
+	FETCH_BOOKS_FAILURE,
+	FETCH_BOOKS_REQUEST,
+	FETCH_BOOKS_SUCCESS,
 } from './actionTypes';
 
 export const booksLoaded = (newBooks) => ({
@@ -21,6 +23,16 @@ export const booksError = (error) => ({
 
 export const bookAddedToCart = (bookId) => ({
 	'type': BOOK_ADDED_TO_CART,
+	'payload': bookId,
+});
+
+export const bookRemoveFromCart = (bookId) => ({
+	'type': BOOK_REMOVE_FROM_CART,
+	'payload': bookId,
+});
+
+export const allBooksRemoveFromCart = (bookId) => ({
+	'type': ALL_BOOKS_REMOVE_FROM_CART,
 	'payload': bookId,
 });
 
