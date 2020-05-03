@@ -45,7 +45,7 @@ class BaseList extends Component {
 	}
 }
 
-const mapStateToProps = ({ books, loading, error }) => ({
+const mapStateToProps = ({ 'bookList': { books, loading, error } }) => ({
 	'books': books,
 	'loading': loading,
 	'error': error,

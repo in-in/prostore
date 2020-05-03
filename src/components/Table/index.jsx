@@ -66,7 +66,7 @@ const BaseTable = ({
 		</table>
 	);
 
-const mapStateToProps = ({ cartItems, orderTotal }) => ({
+const mapStateToProps = ({ 'shoppingCart': { cartItems, orderTotal } }) => ({
 	'items': cartItems,
 	'sum': orderTotal,
 });
