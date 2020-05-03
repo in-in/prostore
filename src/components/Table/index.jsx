@@ -25,12 +25,12 @@ const BaseTable = ({
 				{
 					items.map((item, idx) => {
 						const {
-							id, name, count, total,
+							id, title, count, total,
 						} = item;
 						return (
 							<tr key={id}>
 								<td className={st.table_item}>{idx + 1}</td>
-								<td className={st.table_itemName}>{name}</td>
+								<td className={st.table_itemName}>{title}</td>
 								<td className={st.table_item}>{count}</td>
 								<td className={st.table_item}>${total}</td>
 								<td className={st.table_buttonGroup}>
