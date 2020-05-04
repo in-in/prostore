@@ -12,7 +12,7 @@
 		"not and_uc >= 12"
 	],
 	"dependencies": {
-		"next": "9.3.5",
+		"next": "9.3.6",
 		"react": "16.13.1",
 		"react-dom": "16.13.1",
 		"react-redux": "7.2.0",
@@ -29,16 +29,16 @@
 		"eslint-plugin-import": "2.20.2",
 		"eslint-plugin-jsx-a11y": "6.2.3",
 		"eslint-plugin-react": "7.19.0",
-		"eslint-plugin-react-hooks": "3.0.0",
+		"eslint-plugin-react-hooks": "4.0.0",
 		"postcss-normalize": "9.0.0",
 		"postcss-preset-env": "6.7.0",
 		"prop-types": "15.7.2",
-		"sass": "1.26.3",
-		"stylelint": "13.3.2",
+		"sass": "1.26.5",
+		"stylelint": "13.3.3",
 		"stylelint-a11y": "1.2.3",
 		"stylelint-order": "4.0.0",
-		"stylelint-scss": "3.17.0",
+		"stylelint-scss": "3.17.1",
 		"stylelint-use-nesting": "2.0.0",
-		"stylelint-webpack-plugin": "1.2.3"
+		"stylelint-webpack-plugin": "2.0.0"
 	}
 }
