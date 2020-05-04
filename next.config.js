@@ -8,6 +8,7 @@ const config = {
 		'sassOptions': {
 			'includePaths': [join(__dirname, 'src', 'styles')],
 		},
+		'reactRefresh': true,
 	},
 	webpack(cfg) {
 		cfg.resolve.alias = {
