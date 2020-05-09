@@ -15,7 +15,7 @@ export const Card = ({ book, onAddedToCart }) => {
 				<div className={st.card_body}>
 					<div className={st.card_bodyHeader}>
 						<span className={st.card_author}>{author}</span>
-						<span className={st.card_price}>${price}</span>
+						<span className={st.card_price}>&#36;{price}</span>
 					</div>
 					<h4 className={st.card_title}>{title}</h4>
 					<button

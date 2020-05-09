@@ -12,7 +12,7 @@ import CartPlus from '../../assets/icons/cart_plus.svg';
 import st from './style.module.scss';
 
 const BaseTable = ({
-	items, sum, onIncrease, onDecrease, onDelete,
+	items, onIncrease, onDecrease, onDelete,
 }) =>
 	(
 		<table className={st.table}>
@@ -60,15 +60,17 @@ const BaseTable = ({
 			<tfoot>
 				<tr>
 					<td colSpan="4" className={st.table_totalText}>Total:</td>
-					<td className={st.table_totalAmount}>${sum}</td>
+					<td className={st.table_totalAmount}>&#36;{
+						items.reduce((acc, i) => acc + i.total, 0)
+					}
+					</td>
 				</tr>
 			</tfoot>
 		</table>
 	);
 
-const mapStateToProps = ({ 'shoppingCart': { cartItems, orderTotal } }) => ({
+const mapStateToProps = ({ 'shoppingCart': { cartItems } }) => ({
 	'items': cartItems,
-	'sum': orderTotal,
 });
 
 const mapDispatchToProps = {
@@ -84,5 +86,4 @@ BaseTable.propTypes = {
 	'onDecrease': PropTypes.func.isRequired,
 	'onDelete': PropTypes.func.isRequired,
 	'onIncrease': PropTypes.func.isRequired,
-	'sum': PropTypes.number.isRequired,
 };

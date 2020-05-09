@@ -1,21 +1,36 @@
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Link from 'next/link';
 import Cart from '../../assets/icons/cart.svg';
 import st from './style.module.scss';
 
-export const CartIndicator = ({ numItems, total }) => (
+export const BaseCartIndicator = ({ items }) => (
 	<Link href="/cart">
 		<a className={st.cartIndicator}>
 			<div className={st.cartIndicator_text}>
-				<span>{numItems} items </span>
-				<span>(${total})</span>
+				<span>
+					{
+						items.reduce((acc, i) => acc + i.count, 0)
+					} items
+				</span>
+				<span>(&#36;{
+					items.reduce((acc, i) => acc + i.total, 0)
+				})
+				</span>
 			</div>
 			<Cart className={st.cartIndicator_icon} />
 		</a>
 	</Link>
 );
 
-CartIndicator.propTypes = {
-	'numItems': PropTypes.string.isRequired,
-	'total': PropTypes.string.isRequired,
+const mapStateToProps = ({ 'shoppingCart': { cartItems } }) => ({
+	'items': cartItems,
+});
+
+export const CartIndicator = connect(
+	mapStateToProps,
+)(BaseCartIndicator);
+
+BaseCartIndicator.propTypes = {
+	'items': PropTypes.arrayOf(PropTypes.object).isRequired,
 };
