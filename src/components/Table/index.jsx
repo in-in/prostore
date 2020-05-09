@@ -14,7 +14,7 @@ import st from './style.module.scss';
 const BaseTable = ({
 	items, onIncrease, onDecrease, onDelete,
 }) =>
-	(
+	Boolean(items.length) && (
 		<table className={st.table}>
 			<caption className={st.table_caption}>Your Order</caption>
 			<thead>
