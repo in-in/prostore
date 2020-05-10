@@ -4,6 +4,9 @@ const StylelintPlugin = require('stylelint-webpack-plugin');
 
 const config = {
 	'poweredByHeader': false,
+	'devIndicators': {
+		'autoPrerender': false,
+	},
 	'experimental': {
 		'sassOptions': {
 			'includePaths': [join(__dirname, 'src', 'styles')],
