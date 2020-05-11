@@ -153,3 +153,56 @@
 	padding-right: 5vw;
 	padding-left: 5vw;
 }
+
+@mixin spinner(
+	$color: $king_tide,
+	$duration: 1.5s,
+	$size: 1.5em,
+	$gap: $size / 5,
+) {
+	$unique-name: string.unique-id();
+
+	position: relative;
+	width: $size;
+	height: $size;
+	margin: 0 auto;
+	animation-name: spinner_#{$unique-name};
+	animation-duration: $duration;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+
+	@keyframes spinner_#{$unique-name} {
+		0%,
+		100% {
+			box-shadow:
+				-($size / 2 + $gap / 2) $size 0 $color,
+				($size / 2 + $gap / 2) $size 0 rgba($color, 0.2),
+				($size / 2 + $gap / 2) (($size * 2) + $gap) 0 rgba($color, 0.2),
+				-($size / 2 + $gap / 2) (($size * 2) + $gap) 0 rgba($color, 0.2);
+		}
+
+		25% {
+			box-shadow:
+				-($size / 2 + $gap / 2) $size 0 rgba($color, 0.2),
+				($size / 2 + $gap / 2) $size 0 $color,
+				($size / 2 + $gap / 2) (($size * 2) + $gap) 0 rgba($color, 0.2),
+				-($size / 2 + $gap / 2) (($size * 2) + $gap) 0 rgba($color, 0.2);
+		}
+
+		50% {
+			box-shadow:
+				-($size / 2 + $gap / 2) $size 0 rgba($color, 0.2),
+				($size / 2 + $gap / 2) $size 0 rgba($color, 0.2),
+				($size / 2 + $gap / 2) (($size * 2) + $gap) 0 $color,
+				-($size / 2 + $gap / 2) (($size * 2) + $gap) 0 rgba($color, 0.2);
+		}
+
+		75% {
+			box-shadow:
+				-($size / 2 + $gap / 2) $size 0 rgba($color, 0.2),
+				($size / 2 + $gap / 2) $size 0 rgba($color, 0.2),
+				($size / 2 + $gap / 2) (($size * 2) + $gap) 0 rgba($color, 0.2),
+				-($size / 2 + $gap / 2) (($size * 2) + $gap) 0 $color;
+		}
+	}
+}

@@ -5,7 +5,7 @@ import { withBookstoreService } from '@helpers/withBookstoreService';
 import { fetchBooks, bookAddedToCart } from '@store/actions';
 import { compose } from '@helpers/compose';
 import { Card } from '../Card';
-import { Snipper } from '../Snipper';
+import { Spinner } from '../Spinner';
 import { ErrorIndicator } from '../ErrorIndicator';
 import st from './style.module.scss';
 
@@ -21,7 +21,7 @@ class BaseList extends Component {
 		} = this.props;
 
 		if (loading) {
-			return <Snipper />;
+			return <Spinner />;
 		}
 
 		if (error) {
