@@ -7,10 +7,10 @@ const config = {
 	'devIndicators': {
 		'autoPrerender': false,
 	},
+	'sassOptions': {
+		'includePaths': [join(__dirname, 'src', 'styles')],
+	},
 	'experimental': {
-		'sassOptions': {
-			'includePaths': [join(__dirname, 'src', 'styles')],
-		},
 		'reactRefresh': true,
 	},
 	webpack(cfg) {
