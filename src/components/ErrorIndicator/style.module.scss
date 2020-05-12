@@ -1,3 +1,18 @@
+@use 'config' as *;
+
 .errorIndicator {
-	// keep
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1em;
+
+	> * {
+		margin-bottom: 1em;
+	}
+
+	&_icon {
+		width: 4em;
+		fill: $king_tide;
+	}
 }
