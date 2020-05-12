@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux';
 import { store } from '@store/store';
-import { BookstoreServiceProvider } from '@service/bookstore-context';
-import { BookstoreService } from '@service/bookstore';
+import { BookstoreServiceProvider } from '@services/bookstore-context';
+import { BookstoreService } from '@services/bookstore';
 import { ErrorBoundary } from '~/components/ErrorBoundary';
 import { Layout } from '~/components/Layout';
 import { Header } from '~/components/Header';

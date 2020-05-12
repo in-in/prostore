@@ -14,13 +14,6 @@ const config = {
 		'reactRefresh': true,
 	},
 	webpack(cfg) {
-		cfg.resolve.alias = {
-			...cfg.resolve.alias,
-			'~': join(__dirname, 'src'),
-			'@store': join(__dirname, 'src', 'store'),
-			'@service': join(__dirname, 'src', 'services'),
-			'@helpers': join(__dirname, 'src', 'helpers'),
-		};
 		cfg.plugins.push(new StylelintPlugin({
 			'fix': true,
 		}));

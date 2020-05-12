@@ -13,7 +13,7 @@ module.exports = {
 				'map': [
 					['~', join(__dirname, 'src')],
 					['@store', join(__dirname, 'src', 'store')],
-					['@service', join(__dirname, 'src', 'services')],
+					['@services', join(__dirname, 'src', 'services')],
 					['@helpers', join(__dirname, 'src', 'helpers')],
 				],
 				'extensions': ['.js', '.jsx'],
