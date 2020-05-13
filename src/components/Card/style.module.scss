@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use 'config' as *;
 
 .card {
@@ -85,5 +86,12 @@
 		font-weight: 700;
 		line-height: 1.1;
 		cursor: pointer;
+
+		&:active {
+			background-color:
+				color.scale(
+					$rouge_red, $lightness: -20%, $saturation: 20%
+				);
+		}
 	}
 }
