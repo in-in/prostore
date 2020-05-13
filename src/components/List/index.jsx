@@ -35,7 +35,13 @@ class BaseList extends Component {
 						const { id } = book;
 						return (
 							<li key={id} className={st.list_item}>
-								<Card book={book} onAddedToCart={() => onAddedToCart(id)} />
+								<Card
+									book={book}
+									onAddedToCart={(event) => {
+										event.preventDefault();
+										onAddedToCart(id);
+									}}
+								/>
 							</li>
 						);
 					})
