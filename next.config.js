@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 const { join } = require('path');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 
