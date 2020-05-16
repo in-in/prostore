@@ -15,6 +15,7 @@
 		"next": "9.4.0",
 		"react": "16.13.1",
 		"react-dom": "16.13.1",
+		"react-modal": "3.11.2",
 		"react-redux": "7.2.0",
 		"redux": "4.0.5"
 	},
@@ -28,8 +29,8 @@
 		"eslint-import-resolver-alias": "1.1.2",
 		"eslint-plugin-import": "2.20.2",
 		"eslint-plugin-jsx-a11y": "6.2.3",
-		"eslint-plugin-react": "7.19.0",
-		"eslint-plugin-react-hooks": "4.0.0",
+		"eslint-plugin-react": "7.20.0",
+		"eslint-plugin-react-hooks": "4.0.2",
 		"postcss-normalize": "9.0.0",
 		"postcss-preset-env": "6.7.0",
 		"prop-types": "15.7.2",

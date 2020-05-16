@@ -6,7 +6,7 @@ import st from './style.module.scss';
 
 export const BaseCartIndicator = ({ items }) => (
 	Boolean(items.length) && (
-		<Link href="/cart">
+		<Link href="/?cart=true" as="/cart">
 			<a className={st.cartIndicator}>
 				<div className={st.cartIndicator_wrapper}>
 					<Cart className={st.cartIndicator_icon} />
