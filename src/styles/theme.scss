@@ -24,6 +24,14 @@ BODY {
 	font-size: locks(16, 28);
 }
 
+#__next {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	// stylelint-disable-next-line value-no-vendor-prefix, declaration-block-no-duplicate-properties
+	min-height: -webkit-fill-available;
+}
+
 ::selection {
 	background-color: $rouge_red;
 }

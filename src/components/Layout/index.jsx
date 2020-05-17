@@ -6,6 +6,7 @@ import { BookstoreService } from '@services/bookstore';
 import st from './style.module.scss';
 import { Header } from '~/components/Header';
 import { ErrorBoundary } from '~/components/ErrorBoundary';
+import { Footer } from '~/components/Footer';
 
 const bookstoreService = new BookstoreService();
 
@@ -18,6 +19,7 @@ export const Layout = ({ children }) => (
 				<main className={st.layout}>
 					{children}
 				</main>
+				<Footer />
 			</BookstoreServiceProvider>
 		</ErrorBoundary>
 	</Provider>
