@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use 'config' as *;
 
 :root {
@@ -11,10 +12,11 @@
 }
 
 *:focus {
+	z-index: 4;
 	outline: none !important;
 	box-shadow:
-		0 0 0 rem(2) $king_tide,
-		0 0 0 rem(6) #ffb6c1 !important;
+		0 0 0 rem(2) color.scale($king_tide, $alpha: -30%),
+		0 0 0 rem(6) color.scale($rouge_red, $alpha: -30%) !important;
 }
 
 BODY {
