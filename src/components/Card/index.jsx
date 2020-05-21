@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Picture } from '../Picture';
 import st from './style.module.scss';
 
 export const Card = ({ book, onAddedToCart }) => {
@@ -10,7 +11,7 @@ export const Card = ({ book, onAddedToCart }) => {
 		<article className={st.card}>
 			<a className={st.card_link} href="#0">
 				<figure className={st.card_cover}>
-					<img src={coverImage} alt={title} />
+					<Picture name={coverImage} alt={title} />
 				</figure>
 				<div className={st.card_body}>
 					<div className={st.card_bodyHeader}>
