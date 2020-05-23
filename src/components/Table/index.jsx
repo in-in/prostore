@@ -12,7 +12,7 @@ import CartPlus from '../../assets/icons/cart_plus.svg';
 import st from './style.module.scss';
 
 const BaseTable = ({
-	items, onIncrease, onDecrease, onDelete,
+	items, onIncrease, onDecrease, onDelete, orderTotal,
 }) =>
 	Boolean(items.length) && (
 		<table className={st.table}>
@@ -37,7 +37,7 @@ const BaseTable = ({
 								<td className={st.table_item}>{idx + 1}</td>
 								<td className={st.table_itemName}>{title}</td>
 								<td className={st.table_item}>{count}</td>
-								<td className={st.table_item}>${total}</td>
+								<td className={st.table_item}>${total.toFixed(2)}</td>
 								<td className={st.table_buttonGroup}>
 									<TableButton
 										onClick={() => onDecrease(id)}
@@ -60,9 +60,7 @@ const BaseTable = ({
 			<tfoot>
 				<tr>
 					<td colSpan="4" className={st.table_totalText}>Total:</td>
-					<td className={st.table_totalAmount}>&#36;{
-						items.reduce((acc, i) => acc + i.total, 0)
-					}
+					<td className={st.table_totalAmount}>&#36;{orderTotal}
 					</td>
 				</tr>
 			</tfoot>
@@ -71,6 +69,7 @@ const BaseTable = ({
 
 const mapStateToProps = ({ 'shoppingCart': { cartItems } }) => ({
 	'items': cartItems,
+	'orderTotal': (cartItems.reduce((acc, i) => acc + i.total, 0)).toFixed(2),
 });
 
 const mapDispatchToProps = {
@@ -86,4 +85,5 @@ BaseTable.propTypes = {
 	'onDecrease': PropTypes.func.isRequired,
 	'onDelete': PropTypes.func.isRequired,
 	'onIncrease': PropTypes.func.isRequired,
+	'orderTotal': PropTypes.string.isRequired,
 };
