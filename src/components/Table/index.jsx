@@ -26,7 +26,7 @@ const BaseTable = ({
 					<th className={st.table_head}>Action</th>
 				</tr>
 			</thead>
-			<tbody className={st.table_body}>
+			<tbody>
 				{
 					items.map((item, idx) => {
 						const {

@@ -4,8 +4,4 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(em(200), 1fr));
 	gap: em(16);
-
-	&_item {
-		// outline: 1px solid #f00;
-	}
 }

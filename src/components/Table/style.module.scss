@@ -2,18 +2,7 @@
 
 .table {
 	width: 100%;
-	// outline: 1px solid #ffa100;
 	border-collapse: collapse;
-
-	&_body {
-		TR:nth-of-type(odd) {
-			// background: #c2e8f0;
-		}
-
-		TR:nth-of-type(even) {
-			// background: #98d9e6;
-		}
-	}
 
 	&_caption {
 		text-align: left;
