@@ -11,9 +11,15 @@ export const TableModal = () => {
 	return (
 		<Modal
 			bodyOpenClassName={st.tableModal__open}
-			overlayClassName={st.tableModal}
 			isOpen={!!router.query.cart}
 			onRequestClose={() => router.push('/')}
+			shouldCloseOnOverlayClick
+			style={{
+				// stylelint-disable-next-line selector-type-no-unknown, selector-type-case
+				'overlay': {
+					'zIndex': 3,
+				},
+			}}
 		>
 			<Table />
 		</Modal>

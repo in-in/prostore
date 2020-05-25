@@ -1,10 +1,4 @@
 .tableModal {
-	background-color: #ffc0cb;
-
-	> * {
-		z-index: 3;
-	}
-
 	&__open {
 		overflow: hidden;
 	}
