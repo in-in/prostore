@@ -33,31 +33,33 @@ const BaseTable = ({
 							id, title, count, total,
 						} = item;
 						return (
-							<tr key={id}>
+							<tr key={id} className={st.table_row}>
 								<td className={st.table_item}>{idx + 1}</td>
 								<td className={st.table_itemName}>{title}</td>
 								<td className={st.table_item}>{count}</td>
 								<td className={st.table_item}>${total.toFixed(2)}</td>
-								<td className={st.table_buttonGroup}>
-									<TableButton
-										onClick={() => onDecrease(id)}
-										icon={<CartMinus />}
-									/>
-									<TableButton
-										onClick={() => onIncrease(id)}
-										icon={<CartPlus />}
-									/>
-									<TableButton
-										onClick={() => onDelete(id)}
-										icon={<Close />}
-									/>
+								<td className={st.table_itemButtonGroup}>
+									<div>
+										<TableButton
+											onClick={() => onDecrease(id)}
+											icon={<CartMinus />}
+										/>
+										<TableButton
+											onClick={() => onIncrease(id)}
+											icon={<CartPlus />}
+										/>
+										<TableButton
+											onClick={() => onDelete(id)}
+											icon={<Close />}
+										/>
+									</div>
 								</td>
 							</tr>
 						);
 					})
 				}
 			</tbody>
-			<tfoot>
+			<tfoot className={st.table_foot}>
 				<tr>
 					<td colSpan="4" className={st.table_totalText}>Total:</td>
 					<td className={st.table_totalAmount}>&#36;{orderTotal}

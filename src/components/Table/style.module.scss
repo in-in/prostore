@@ -28,6 +28,11 @@
 			width: 60%;
 			text-align: left;
 		}
+
+		&ButtonGroup {
+			composes: $item;
+			text-align: center;
+		}
 	}
 
 	&_total {
@@ -48,7 +53,65 @@
 		}
 	}
 
-	&_buttonGroup {
-		text-align: center;
+	@media (max-width: 500px) {
+		&_head {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+		&_row {
+			display: block;
+			margin-bottom: 2em;
+		}
+
+		&_item {
+			display: flex;
+			justify-content: space-between;
+			border-bottom: 1px solid #eee;
+			text-align: right;
+
+			&Name {
+				width: auto;
+			}
+
+			&::before {
+				flex-shrink: 0;
+				width: 25%;
+				text-align: left;
+				white-space: nowrap;
+			}
+
+			// stylelint-disable-next-line a11y/content-property-no-static-value
+			&:nth-of-type(1)::before {
+				content: '#';
+			}
+
+			// stylelint-disable-next-line a11y/content-property-no-static-value
+			&:nth-of-type(2)::before {
+				content: 'Item';
+			}
+
+			// stylelint-disable-next-line a11y/content-property-no-static-value
+			&:nth-of-type(3)::before {
+				content: 'Count';
+			}
+
+			// stylelint-disable-next-line a11y/content-property-no-static-value
+			&:nth-of-type(4)::before {
+				content: 'Total';
+			}
+
+			// stylelint-disable-next-line a11y/content-property-no-static-value
+			&:nth-of-type(5)::before {
+				content: 'Action';
+			}
+		}
+
+		&_foot TR {
+			display: flex;
+			justify-content: flex-end;
+			align-items: baseline;
+		}
 	}
 }

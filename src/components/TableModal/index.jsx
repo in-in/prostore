@@ -19,6 +19,14 @@ export const TableModal = () => {
 				'overlay': {
 					'zIndex': 3,
 				},
+				// stylelint-disable-next-line selector-type-no-unknown, selector-type-case
+				'content': {
+					'top': '1em',
+					'right': '1em',
+					'bottom': '1em',
+					'left': '1em',
+					'padding': '1em',
+				},
 			}}
 		>
 			<Table />
