@@ -38,8 +38,8 @@ const BaseTable = ({
 								<td className={st.table_itemName}>{title}</td>
 								<td className={st.table_item}>{count}</td>
 								<td className={st.table_item}>${total.toFixed(2)}</td>
-								<td className={st.table_itemButtonGroup}>
-									<div>
+								<td className={st.table_item}>
+									<div className={st.table_buttonGroup}>
 										<TableButton
 											onClick={() => onDecrease(id)}
 											icon={<CartMinus />}
