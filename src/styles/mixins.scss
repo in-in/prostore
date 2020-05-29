@@ -41,10 +41,6 @@
 		left: 0;
 		border-bottom: 0.07em solid $rouge_red;
 		transform: translateY(-50%);
-
-		@media (prefers-reduced-motion: reduce) {
-			right: 0;
-		}
 	}
 }
 
