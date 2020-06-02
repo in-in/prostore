@@ -31,7 +31,6 @@ class CustomDocument extends Document {
 					<meta name="msapplication-TileColor" content="#00aba9" />
 					<meta name="theme-color" content="#ffffff" />
 					<meta name="description" content="Simple online bookstore" />
-					<title>ProStore</title>
 				</Head>
 				<body>
 					<Main />
