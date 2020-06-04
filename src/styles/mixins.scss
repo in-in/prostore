@@ -67,25 +67,25 @@
 			}
 		}
 	}
-}
 
-@keyframes line {
-	0%,
-	10% {
-		right: 100%;
-		left: 0;
-	}
+	@keyframes line {
+		0%,
+		10% {
+			right: 100%;
+			left: 0;
+		}
 
-	40%,
-	60% {
-		right: 0;
-		left: 0;
-	}
+		40%,
+		60% {
+			right: 0;
+			left: 0;
+		}
 
-	90%,
-	100% {
-		right: 0;
-		left: 100%;
+		90%,
+		100% {
+			right: 0;
+			left: 100%;
+		}
 	}
 }
 

@@ -1,6 +1,8 @@
 @use 'sass:color';
 @use 'config' as *;
 
+@forward 'fonts';
+
 :root {
 	--border_radius: #{rem($border_radius)};
 	--transition_duration: 0.4s;
