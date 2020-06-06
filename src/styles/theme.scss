@@ -3,6 +3,25 @@
 
 @forward 'fonts';
 
+* {
+	scrollbar-color: $king_tide $blue_emulsion;
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $blue_emulsion;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border: 3px solid $blue_emulsion;
+		border-radius: 10px;
+		background-color: $king_tide;
+	}
+}
+
 :root {
 	--border_radius: #{rem($border_radius)};
 	--transition_duration: 0.4s;
