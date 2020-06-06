@@ -2,10 +2,8 @@
 @use 'config' as *;
 
 .card {
-	&_link {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(em(150), 1fr));
-	}
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(em(150), 1fr));
 
 	&_cover {
 		display: grid;

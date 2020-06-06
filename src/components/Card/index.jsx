@@ -9,24 +9,22 @@ export const Card = ({ book, onAddedToCart }) => {
 
 	return (
 		<article className={st.card}>
-			<a className={st.card_link} href="#0">
-				<figure className={st.card_cover}>
-					<Picture name={coverImage} alt={title} />
-				</figure>
-				<div className={st.card_body}>
-					<div className={st.card_bodyHeader}>
-						<span className={st.card_author}>{author}</span>
-						<span className={st.card_price}>&#36;{price}</span>
-					</div>
-					<h4 className={st.card_title}>{title}</h4>
-					<button
-						type="button"
-						className={st.card_button}
-						onClick={onAddedToCart}
-					>Add To Cart
-					</button>
-				</div>
+			<a className={st.card_cover} href="#0">
+				<Picture name={coverImage} alt={title} />
 			</a>
+			<div className={st.card_body}>
+				<div className={st.card_bodyHeader}>
+					<span className={st.card_author}>{author}</span>
+					<span className={st.card_price}>&#36;{price}</span>
+				</div>
+				<h4 className={st.card_title}>{title}</h4>
+				<button
+					type="button"
+					className={st.card_button}
+					onClick={onAddedToCart}
+				>Add To Cart
+				</button>
+			</div>
 		</article>
 	);
 };
