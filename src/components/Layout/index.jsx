@@ -17,6 +17,7 @@ export const Layout = ({ children }) => (
 			<BookstoreServiceProvider value={bookstoreService}>
 				<Header />
 				<main className={st.layout}>
+					<h2 className="visually-hidden">book list</h2>
 					{children}
 				</main>
 				<Footer />
