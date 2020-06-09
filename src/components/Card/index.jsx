@@ -9,7 +9,7 @@ export const Card = ({ book, onAddedToCart }) => {
 
 	return (
 		<article className={st.card}>
-			<a className={st.card_cover} href="#0">
+			<a className={st.card_cover} href="#">
 				<Picture name={coverImage} alt={title} />
 			</a>
 			<div className={st.card_body}>
