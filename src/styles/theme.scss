@@ -33,7 +33,7 @@
 }
 
 *:focus {
-	z-index: 4;
+	z-index: 2;
 	outline: none !important;
 	box-shadow:
 		0 0 0 rem(2) color.scale($king_tide, $alpha: -30%),
