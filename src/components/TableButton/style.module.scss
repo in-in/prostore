@@ -1,6 +1,7 @@
 @use 'config' as *;
 
 .tableButton {
+	flex-shrink: 0;
 	width: 100%;
 	max-width: 1.5em;
 	max-height: 1.5em;
